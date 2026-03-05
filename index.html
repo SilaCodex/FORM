@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sila University - Student Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            border: 3px solid #4a69bd;
+        }
+        
+        .university-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a69bd;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #4a69bd;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .university-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            color: #4a69bd;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #4a69bd;
+            box-shadow: 0 0 10px rgba(74, 105, 189, 0.3);
+        }
+        
+        .hobbies-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .hobby-checkbox {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .hobby-checkbox input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+        }
+        
+        .btn-reset {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        br {
+            display: block;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <!-- University Header -->
+        <div class="university-header">
+            <img src="https://via.placeholder.com/80/4a69bd/ffffff?text=SI" alt="Sila University Logo" class="logo">
+            <div class="university-name">Sila University</div>
+        </div>
+        
+        <!-- Form Title -->
+        <h1 class="form-title">Student Registration Form</h1>
+        
+        <!-- Registration Form -->
+        <form>
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <br><br>
+            </div>
+            
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                <br><br>
+            </div>
+            
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <br><br>
+            </div>
+            
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male" style="display: inline; font-weight: normal; margin-left: 5px;">Male</label>
+                <br><br>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" style="display: inline; font-weight: normal; margin-left: 5px;">Female</label>
+                <br><br>
+            </div>
+            
+            <!-- Hobbies -->
+            <div class="form-group">
+                <label>Hobbies (Select up to 4):</label>
+                <div class="hobbies-group">
+                    <label class="hobby-checkbox">
+                        <input type="checkbox" name="hobbies" value="Coding"> Coding
+                    </label>
+                    <label class="hobby-checkbox">
+                        <input type="checkbox" name="hobbies" value="Reading"> Reading
+                    </label>
+                    <label class="hobby-checkbox">
+                        <input type="checkbox" name="hobbies" value="Gaming"> Gaming
+                    </label>
+                    <label class="hobby-checkbox">
+                        <input type="checkbox" name="hobbies" value="Sports"> Sports
+                    </label>
+                </div>
+                <br><br>
+            </div>
+            
+            <!-- Main Course -->
+            <div class="form-group">
+                <label for="course">Main Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select Course --</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Business">Business</option>
+                    <option value="Data Science">Data Science</option>
+                </select>
+                <br><br>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-submit">Submit Registration</button>
+                <button type="reset" class="btn btn-reset">Reset Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
